@@ -47,10 +47,36 @@ select {
   box-sizing: border-box;
 }
 
+/*  Bar de navigation */
 
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding-top: 1em;
+  /* padding: 0; */
+}
+
+li a {
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.profile{
+  background-image: url(../img/logo.png);
+  background-size: 32px 32px;
+  border-radius: 50%;
+  display: block;
+  margin-top: -25px;
+  margin-right: 10px;
+  overflow: hidden;
+  position: relative;
+  height: 32px;
+  width: 32px;
+  z-index: 0;
+}
 
 .container {
-  min-height: 100vh;
+  min-height: 90vh;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -61,15 +87,14 @@ select {
   /* background-color: #a598ee; */
   background-size: cover;
   background-position: center center;
-  padding: 15px;
+  padding-left:10em;
 }
-
-
 
 .container form {
   width: 100%;
-  max-width: 790px;
+  max-width: 800px;
   margin-bottom: 0;
+  padding-left: 30px;
 }
 
 .container form .inner-form {
