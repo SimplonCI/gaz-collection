@@ -8,7 +8,7 @@
   <body>
 
     <ul>
-      <?php if($_SESSION['logged_in']): ?>
+      <?php if(isset($_SESSION['logged_in'])): ?>
       <li style="float:right"> <a href="#"> <span class="profile"></span> </a> </li>
       <li style="float:right"><a href="#about">Hi, <?php echo $_SESSION['prenom']; ?></a></li>
       <li style="float:right"><a href="index.php?logout='true'">deconnexion</a></li>
