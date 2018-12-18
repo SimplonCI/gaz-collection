@@ -17,8 +17,8 @@
     $prenom = addslashes($_POST['prenom']);
     $email = addslashes($_POST['email']);
     $telephone = addslashes($_POST['telephone']);
-    $password = $_POST['telephone'];
-    $passwordconfirm = $_POST['telephone'];
+    $password = $_POST['password'];
+    $passwordconfirm = $_POST['passwordconfirm'];
 
     // validation du formulaire
     if (empty($nom)) {

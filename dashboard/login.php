@@ -3,14 +3,15 @@
 
   include '../config/database.php';
 
-  $username = '';
+  $userslogin = '';
   $password = '';
   $errors = array();
 
 
   if (isset($_POST['login'])) {
-    $username = addslashes($_POST['username']);
-    $password = addslashes($_POST['password']);
+    $userslogin = addslashes($_POST['userslogin']);
+    $password = md5($_POST['password']);
+    // echo $userslogin.' '.$password;
 
     // validation du fomulaire
     if(empty($username)){
@@ -26,10 +27,10 @@
 
     if (count($errors)==0) {
       // cryptage du mot de passe
-      $password = md5($password);
+      // $password = md5($password);
       // verification si l'utilisateur a un compte
       // requete
-      $query = "SELECT * FROM gerant WHERE email='$username' AND password='$password' LIMIT 1";
+      $query = "SELECT * FROM gerant WHERE email='$userslogin' AND password='$password'";
       // execution de la requete
       $results = mysqli_query($db,$query);
 
@@ -43,16 +44,19 @@
         $_SESSION['nom'] = $array['nom'];
         $_SESSION['prenom'] = $array['prenom'];
 
-        mysqli_close($db);
+
 
         // redirection de l'utilisateur
+         echo '<script language="Javascript">';
+         echo 'document.location.replace("./index.php")'; // -->
+         echo ' </script>';
 
-        header('location: index.php');
       } else {
 
         array_push($errors, "Erreur , la combinaison du login et du mot de passe incorrect");
       }
     }
+    mysqli_close($db);
   }
 ?>
 

@@ -42,15 +42,17 @@
         $_SESSION['nom'] = $array['nom'];
         $_SESSION['prenom'] = $array['prenom'];
 
-        mysqli_close($db);
+
 
         // redirection de l'utilisateur
-
-        header('location: index.php');
+         echo '<script language="Javascript">';
+         echo 'document.location.replace("./index.php")'; // -->
+         echo ' </script>';
       } else {
         array_push($errors, "Erreur , la combinaison du login et du mot de passe incorrect");
       }
     }
+    mysqli_close($db);
   }
 
 ?>

@@ -28,7 +28,7 @@
                                  <input class="form-control" placeholder="mot de passe" name="password" type="password">
                              </div>
                              <div class="form-group">
-                                 <input class="form-control" placeholder="comfirmer le mot de passe" name="passwordConfirm" type="password">
+                                 <input class="form-control" placeholder="comfirmer le mot de passe" name="passwordconfirm" type="password">
                              </div>
 
                              <button type="submit" name="register" class="btn btn-lg btn-success btn-block">Je m' inscris</a>

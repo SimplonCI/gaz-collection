@@ -11,7 +11,7 @@
                      <form role="form" method="post" action="login.php">
                          <fieldset>
                              <div class="form-group">
-                                 <input class="form-control" placeholder="E-mail ou telephone" name="username" type="text" value="<?php echo $username ?>">
+                                 <input class="form-control" placeholder="E-mail ou telephone" name="userslogin" type="text" value="<?php echo $userslogin ?>">
                              </div>
                              <div class="form-group">
                                  <input class="form-control" placeholder="mot de passe" name="password" type="password" value="">

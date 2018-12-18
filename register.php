@@ -18,8 +18,8 @@
     $prenom = addslashes($_POST['prenom']);
     $email = addslashes($_POST['email']);
     $telephone = addslashes($_POST['telephone']);
-    $password = $_POST['telephone'];
-    $passwordconfirm = $_POST['telephone'];
+    $password = $_POST['password'];
+    $passwordconfirm = $_POST['passwordconfirm'];
 
     // validation du formulaire
     if (empty($nom)) {
@@ -74,11 +74,16 @@
       $query = '';
       // execution de la requete
       mysqli_query($db,"INSERT INTO users (nom,prenom,email,telephone,password,date_create) VALUES ('$nom','$prenom','$email','$telephone','$password','$datepost')");
-      // close database
-      mysqli_close($db);
-      // redirection
-      header('location: login.php');
+
+
+      // redirection de l'utilisateur
+       echo '<script language="Javascript">';
+       echo 'document.location.replace("./login.php")'; // -->
+       echo ' </script>';
     }
+
+    // close database
+    mysqli_close($db);
   }
 ?>
 
