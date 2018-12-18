@@ -39,10 +39,10 @@
       if (mysqli_num_rows($results) == 1) {
         // stocker le retour de la requete dans un tableau
         $array = $results -> fetch_assoc();
-        $_SESSION['logged_in'] = true;
-        $_SESSION['username'] = $array['email'];
-        $_SESSION['nom'] = $array['nom'];
-        $_SESSION['prenom'] = $array['prenom'];
+        $_SESSION['admin_in'] = true;
+        $_SESSION['gerant_username'] = $array['email'];
+        $_SESSION['gerant_nom'] = $array['nom'];
+        $_SESSION['gerant_prenom'] = $array['prenom'];
 
 
 
