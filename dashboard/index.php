@@ -11,7 +11,7 @@
      echo ' </script>';
   }
 
-  
+
   // deconnexion
   if (isset($_GET['logout'])) {
     // destruction de la sesssion

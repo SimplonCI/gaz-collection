@@ -48,7 +48,7 @@
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-table fa-fw"></i> Point de vente</a>
+                        <a href="point-de-vente.php"><i class="fa fa-table fa-fw"></i> Point de vente</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-edit fa-fw"></i> Forms</a>
