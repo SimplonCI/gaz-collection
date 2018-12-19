@@ -16,7 +16,7 @@
             <input type="email" placeholder="Email" name="email" value="<?php echo $email ?>" id="email"> <br> <br>
             <input type="tel" placeholder="Telephone" name="telephone" value="<?php echo $telephone ?>" id="telephone"> <br> <br>
             <input type="password" placeholder="Mot de passe" name="password" value="" id="password"> <br> <br>
-            <input type="password" placeholder="Confirmer le mot de passe" name="passwordConfirm" value="" id="passwordConfirm"> <br> <br>
+            <input type="password" placeholder="Confirmer le mot de passe" name="passwordconfirm" value="" id="passwordconfirm"> <br> <br>
             <button type="submit" name="registration">Je m'inscris</button> <br><br>
 
           </form>

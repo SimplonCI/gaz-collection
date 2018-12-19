@@ -38,6 +38,7 @@
         // stocker le retour de la requete dans un tableau
         $array = $results -> fetch_assoc();
         $_SESSION['logged_in'] = true;
+        $_SESSION['logged_id'] = $array['id'];
         $_SESSION['username'] = $array['email'];
         $_SESSION['nom'] = $array['nom'];
         $_SESSION['prenom'] = $array['prenom'];
