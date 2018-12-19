@@ -80,8 +80,18 @@
     if (count($errors) == 0) {
       //cryptage du mot de passe
       $password = md5($password);
+
+      $picture = '';
+      $image_path = $_FILES["fileUpload"]["tmp_name"]; //this will be the physical path of your image
+      // $name_image = $_FILES['fileUpload']['name'];
+      if($image_path!=""){
+         $img_binary = fread(fopen($image_path, "r"), filesize($image_path));
+         $picture = base64_encode($img_binary);
+       } else {
+         $picture = $rows['image'];
+       }
       // requete
-      $query = "UPDATE users SET nom='$nom', prenom='$prenom', email='$email', telephone='$telephone' WHERE id='$id'";
+      $query = "UPDATE users SET nom='$nom', prenom='$prenom', email='$email', telephone='$telephone', image='$picture' WHERE id='$id'";
       // execution de la requete
       mysqli_query($db,$query);
 

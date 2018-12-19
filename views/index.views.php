@@ -9,7 +9,7 @@
 
     <ul>
       <?php if(isset($_SESSION['logged_in'])): ?>
-      <li style="float:right"> <a href="#"> <span class="profile"></span> </a> </li>
+      <li style="float:right"> <a href="#"> <span class="profile" id="profile"></span> </a> </li>
       <li style="float:right"><a href="profile.php?id=<?php echo$_SESSION['logged_id']?> ">Hi, <?php echo $_SESSION['prenom']; ?></a></li>
       <li style="float:right"><a href="index.php?logout='true'">deconnexion</a></li>
       <li style="float:right"><a href="#about">About</a></li>
@@ -19,6 +19,7 @@
       <li style="float:right"><a href="#about">About</a></li>
     <?php endif ?>
     </ul>
+
     <div class="container" id="header">
       <form id="search" method="post">
         <div class="inner-form">
@@ -37,6 +38,17 @@
 
 
     </div>
+
+
+    <?php if(isset($_SESSION['logged_in'])): ?>
+
+       <img src="data:image/png;base64,<?php echo $_SESSION['profile']?>">
+       <?php $imageUrl = 'data:image/png;base64,'.$_SESSION['profile'] ?>
+       <script type="text/javascript">
+            document.getElementById('profile').style.background = "url('<?php echo $imageUrl?>')";
+       </script>
+
+    <?php endif ?>
 
   </body>
 </html>

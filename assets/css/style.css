@@ -62,8 +62,8 @@ li a {
 }
 
 .profile{
-  background-image: url(../img/logo.png);
-  background-size: 32px 32px;
+  /* background-image: url(../img/logo.png); */
+  background-size: 50px 50px;
   border-radius: 50%;
   display: block;
   margin-top: -25px;

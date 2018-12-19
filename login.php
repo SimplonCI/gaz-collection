@@ -42,6 +42,7 @@
         $_SESSION['username'] = $array['email'];
         $_SESSION['nom'] = $array['nom'];
         $_SESSION['prenom'] = $array['prenom'];
+        $_SESSION['profile'] = $array['image'];
 
 
 
