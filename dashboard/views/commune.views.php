@@ -26,7 +26,8 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Nom</th>
-                                            <th>Description</th>
+                                            <th>Longitude</th>
+                                            <th>Latitude</th>
 
                                         </tr>
                                     </thead>
@@ -36,7 +37,8 @@
                                           <tr class="gradeA">
                                              <td><?php echo $row['id']; ?></td>
                                               <td><?php echo $row['nom']; ?></td>
-                                              <td><?php echo $row['description']; ?> </td>
+                                              <td><?php echo $row['longitude']; ?> </td>
+                                              <td><?php echo $row['latitude']; ?> </td>
                                           </tr>
                                         <?php  endwhile ?>
 
