@@ -95,6 +95,9 @@ li a {
   max-width: 800px;
   margin-bottom: 0;
   padding-left: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
 
 .container form .inner-form {
@@ -114,7 +117,7 @@ li a {
   height: 68px;
 }
 
-.container form .inner-form .input-field input {
+.container form .inner-form .input-field select {
   height: 100%;
   background: transparent;
   border: 0;
@@ -123,24 +126,26 @@ li a {
   padding: 10px 32px;
   font-size: 16px;
   color: #555;
+
+  padding: 20px;
 }
 
-.container form .inner-form .input-field input.placeholder {
+.container form .inner-form .input-field select.placeholder {
   color: #888;
   font-size: 16px;
 }
 
-.container form .inner-form .input-field input:-moz-placeholder {
+.container form .inner-form .input-field select:-moz-placeholder {
   color: #888;
   font-size: 16px;
 }
 
-.container form .inner-form .input-field input::-webkit-input-placeholder {
+.container form .inner-form .input-field select::-webkit-input-placeholder {
   color: #888;
   font-size: 16px;
 }
 
-.container form .inner-form .input-field input:hover, .container form .inner-form .input-field input:focus {
+.container form .inner-form .input-field select:hover, .container form .inner-form .input-field select:focus {
   box-shadow: none;
   outline: 0;
   border-color: #fff;
@@ -251,4 +256,29 @@ li a {
 .container form .inner-form .input-field.third-wrap .btn-search:focus {
   outline: 0;
   box-shadow: none;
+}
+
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    /* border: 1px solid #aaa;
+    border-radius: 4px; */
+    height: 4.2em;
+    border: none;
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 4;
+}
+
+
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 26px;
+    position: absolute;
+    top: 1.3em;
+    right: 1px;
+    width: 20px;
 }
