@@ -7,7 +7,7 @@
   if (!isset($_SESSION['admin_in'])) {
     // redirection de l'utilisateur
      echo '<script language="Javascript">';
-     echo 'document.location.replace("./login.php")'; // -->
+     echo 'document.location.replace("dashboard/login.php")'; // -->
      echo ' </script>';
   }
 

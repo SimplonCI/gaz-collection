@@ -1,4 +1,5 @@
 <?php include 'partials/_header.php'; ?>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <div id="wrapper">
   <?php include 'partials/_sidebar.php'; ?>
   <div id="page-wrapper">
@@ -29,12 +30,25 @@
                                           <input class="form-control" type="tel" name="telephone" id="telephone" value="<?php echo $telephone ?>">
                                       </div>
                                       <div class="form-group">
-                                          <label>Nom du quartier ou se localise le point de vente</label>
-                                          <input class="form-control" type="text" name="quartier" id="quartier" value="<?php echo $quartier ?>">
+                                        <label>Nom du quartier</label>
+                                          <select class="form-control" name="quartier" id="quartier">
+                                            <?php if (mysqli_num_rows($quartiers) > 0) : ?>
+                                                <?php while ($row = $quartiers -> fetch_assoc()): ?>
+                                                  <option value="<?php echo $row['nom']; ?>"><?php echo $row['nom']; ?></option>
+                                                <?php  endwhile ?>
+                                            <?php endif; ?>
+                                          </select>
+                                          <!-- <input class="form-control" type="text" name="quartier" id="quartier" value="<?php echo $quartier ?>"> -->
                                       </div>
                                       <div class="form-group">
-                                          <label>Nom de la commune ou se localise le point de vente</label>
-                                          <input class="form-control" type="text" name="commune" id="commune" value="<?php echo $commune ?>">
+                                        <label>Nom de la commune</label>
+                                        <select class="form-control" name="commune" id="commune">
+                                          <?php if (mysqli_num_rows($communes) > 0) : ?>
+                                              <?php while ($row = $communes -> fetch_assoc()): ?>
+                                                <option value="<?php echo $row['nom']; ?>"><?php echo $row['nom']; ?></option>
+                                              <?php  endwhile ?>
+                                          <?php endif; ?>
+                                        </select>
                                       </div>
 
                                       <div class="form-group">
@@ -84,3 +98,13 @@
       <!-- /#page-wrapper -->
 </div>
 <?php include 'partials/_footer.php'; ?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script type="text/javascript">
+      $(document).ready(function(){
+        $("#commune").select2();
+        $("#quartier").select2();
+      });
+      // var el = document.getElementById('quartier');
+      // el.style.width = '300px';
+</script>

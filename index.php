@@ -14,6 +14,14 @@
 
     header('location: index.php');
   }
+
+  //  recuperation de tout les quartiers
+  $quartier = "SELECT * FROM quartier";
+  $quartiers = mysqli_query($db,$quartier);
+
+  // recuperation de tout les communes
+  $commune = "SELECT * FROM commune";
+  $communes = mysqli_query($db,$commune);
 ?>
 
 <?php include 'views/index.views.php' ?>

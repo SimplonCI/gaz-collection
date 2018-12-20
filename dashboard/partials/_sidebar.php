@@ -51,7 +51,10 @@
                         <a href="point-de-vente.php"><i class="fa fa-table fa-fw"></i> Point de vente</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                        <a href="commune.php"><i class="fa fa-edit fa-fw"></i> Commune</a>
+                    </li>
+                    <li>
+                        <a href="quartier.php"><i class="fa fa-edit fa-fw"></i> Quartier</a>
                     </li>
 
                 </ul>

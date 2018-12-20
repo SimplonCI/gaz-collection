@@ -3,6 +3,14 @@
    include 'partials/_connecte.php';
    include '../config/database.php';
 
+   //  recuperation de tout les quartiers
+   $quar = "SELECT * FROM quartier";
+   $quartiers = mysqli_query($db,$quar);
+
+   // recuperation de tout les communes
+   $comm = "SELECT * FROM commune";
+   $communes = mysqli_query($db,$comm);
+
    // declaration de variable
    $nom = '';
    $telephone = '';
@@ -22,8 +30,8 @@
      // il ne faut pas faire confiance a l'utilisateur
      $nom = addslashes($_POST['nom']);
      $telephone = addslashes($_POST['telephone']);
-     $quartier = addslashes($_POST['quartier']);
-     $commune = addslashes($_POST['commune']);
+     $quartier = strtolower(addslashes($_POST['quartier']));
+     $commune = strtolower(addslashes($_POST['commune']));
      $livraison = addslashes($_POST['livraison']);
      $longitude = addslashes($_POST['longitude']);
      $latitude = addslashes($_POST['latitude']);
