@@ -1,4 +1,5 @@
 <?php include 'partials/_header.php'; ?>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <div id="wrapper">
   <?php include 'partials/_sidebar.php'; ?>
   <div id="page-wrapper">
@@ -24,9 +25,16 @@
                                           <label>Nom du quartier</label>
                                           <input class="form-control" type="text" name="nom" id="nom" value="<?php echo $nom ?>">
                                       </div>
+                                      
                                       <div class="form-group">
-                                          <label>Commentaire sur le quartier</label>
-                                          <textarea class="form-control" rows="3" name="description" value="<?php $description ?>" id="description"></textarea>
+                                        <label for="commune">La commune</label>
+                                        <select class="form-control" name="commune" id="commune">
+                                            <?php if(mysqli_num_rows($communes) >0):?>
+                                                <?php while($rows = $communes -> fetch_assoc()):?>
+                                                    <option value="<?php echo $rows['nom']?>"><?php echo $rows['nom']?></option>
+                                                <?php endwhile?>
+                                            <?php endif ?>
+                                        </select>
                                       </div>
                                       <button type="submit" class="btn btn-default" name="enregister">Enregistrer</button>
                                       <button type="reset" class="btn btn-default">Reintialiser</button>
@@ -47,3 +55,13 @@
       <!-- /#page-wrapper -->
 </div>
 <?php include 'partials/_footer.php'; ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script type="text/javascript">
+      $(document).ready(function(){
+        $("#commune").select2();
+        $("#quartier").select2();
+      });
+      // var el = document.getElementById('quartier');
+      // el.style.width = '300px';
+</script>
+

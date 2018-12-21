@@ -5,7 +5,8 @@
 
    // declaration de variable
    $nom = '';
-   $description = '';
+   $longitude = '';
+   $latitude = '';
 
    // tableau d'erreur
    $errors = array();
@@ -15,7 +16,8 @@
    if (isset($_POST['enregister'])) {
      // il ne faut pas faire confiance a l'utilisateur
      $nom = strtolower(addslashes($_POST['nom']));
-     $description = addslashes($_POST['description']);
+     $longitude = addslashes($_POST['longitude']);
+     $latitude = addslashes($_POST['latitude']);
 
 
 
@@ -23,6 +25,14 @@
      if (empty($nom)) {
        array_push($errors,"Le nom de la commune est obligatoire");
      }
+
+     if (empty($latitude)) {
+      array_push($errors,"La latitude de la commune est obligatoire");
+    }
+
+    if (empty($longitude)) {
+      array_push($errors,"La longitude de la commune est obligatoire");
+    }
 
 
 
@@ -32,8 +42,7 @@
      if (count($errors) == 0) {
        // requete d'insertion
 
-       $query = "INSERT INTO commune (nom,description)
-                VALUES('$nom','$description')";
+       $query = "INSERT INTO commune (nom,longitude,latitude) VALUES('$nom','$longitude','$latitude')";
 
        // execution de la requete
        $results = mysqli_query($db,$query);

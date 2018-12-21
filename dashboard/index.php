@@ -12,6 +12,13 @@
   }
 
 
+  // recuperation des informations
+  // point de vente
+  $point_de_vente = mysqli_query($db,"SELECT * FROM point_de_vente");
+  $quartier = mysqli_query($db,"SELECT * FROM quartier");
+  $commune = mysqli_query($db,"SELECT * FROM commune");
+
+
   // deconnexion
   if (isset($_GET['logout'])) {
     // destruction de la sesssion
@@ -29,5 +36,6 @@
      echo ' </script>';
   }
 ?>
+
 
 <?php include 'views/index.views.php' ?>

@@ -24,10 +24,17 @@
                                           <label>Nom de la commune</label>
                                           <input class="form-control" type="text" name="nom" id="nom" value="<?php echo $nom ?>">
                                       </div>
+
                                       <div class="form-group">
-                                          <label>Commentaire sur la commune</label>
-                                          <textarea class="form-control" rows="3" name="description" value="<?php $description ?>" id="description"></textarea>
+                                          <label>Longitude de la commune</label>
+                                          <input class="form-control" type="text" name="longitude" id="longitude" value="<?php echo $longitude ?>">
                                       </div>
+
+                                      <div class="form-group">
+                                          <label>Latitude de la commune</label>
+                                          <input class="form-control" type="text" name="latitude" id="latitude" value="<?php echo $latitude ?>">
+                                      </div>
+                                      
                                       <button type="submit" class="btn btn-default" name="enregister">Enregistrer</button>
                                       <button type="reset" class="btn btn-default">Reintialiser</button>
                                   </form>

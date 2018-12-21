@@ -2,10 +2,16 @@
    session_start();
    include 'partials/_connecte.php';
    include '../config/database.php';
+   
+    // recuperation de toute les communes
+    // requete
+    $queryCommune = "SELECT * FROM commune";
+    $communes = mysqli_query($db,$queryCommune);
+
 
    // declaration de variable
    $nom = '';
-   $description = '';
+   $commune = '';
 
    // tableau d'erreur
    $errors = array();
@@ -16,14 +22,18 @@
    if (isset($_POST['enregister'])) {
      // il ne faut pas faire confiance a l'utilisateur
      $nom = strtolower(addslashes($_POST['nom']));
-     $description = addslashes($_POST['description']);
+     $commune = addslashes($_POST['commune']);
 
 
 
      // validation du formulaire
      if (empty($nom)) {
-       array_push($errors,"Le nom de la commune est obligatoire");
+       array_push($errors,"Le nom du quartier est obligatoire");
      }
+
+     if (empty($commune)) {
+      array_push($errors,"Le nom de la commune est obligatoire");
+    }
 
 
 
@@ -33,8 +43,7 @@
      if (count($errors) == 0) {
        // requete d'insertion
 
-       $query = "INSERT INTO quartier (nom,description)
-                VALUES('$nom','$description')";
+       $query = "INSERT INTO quartier (nom,commune) VALUES('$nom','$commune')";
 
        // execution de la requete
        $results = mysqli_query($db,$query);

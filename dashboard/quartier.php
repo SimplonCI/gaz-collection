@@ -9,6 +9,8 @@
    // execution de la requete
    $results = mysqli_query($db,$query);
 
+   
+
 
  ?>
 
